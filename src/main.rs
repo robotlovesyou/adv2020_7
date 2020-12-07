@@ -13,7 +13,6 @@ fn read_lines<P: AsRef<path::Path>>(filename: P) -> io::Result<io::Lines<io::Buf
 lazy_static! {
     static ref RULE_REGEX: Regex = Regex::new(r"^(?P<color>(\w+\s?)+) bags contain (?P<contents>.+)$").expect("illegal regex");
     static ref CONTENT_REGEX: Regex = Regex::new(r"^\s?(?P<count>\d+)\s(?P<color>(\w+\s?)+)\sbags?\.?").expect("illegal regex");
-    //\s(?P<color>\w+\s?) bags?\.?
 }
 
 #[derive(Eq, PartialEq, Hash)]
